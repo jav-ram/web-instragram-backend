@@ -7,7 +7,6 @@ class Post(models.Model):
     created_by = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     content= models.CharField(max_length=150)
     liked= models.ManyToManyField(User, 'Like')
-    likes= models.IntegerField()
 
 class Like(models.Model):
     user= models.ForeignKey(User, on_delete=models.CASCADE)
